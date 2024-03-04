@@ -21,8 +21,7 @@ Configuring the files in the right format can be a bit tricky, so that deserves 
 
 ## Configuring the note-files:
 1. Create a text file that contains both the key-to-press, and the duration of the note (You can look at some of the Sample files included in this project to get an idea of what to do, but the structure should be "key to press", then on a new line, "duration of note", etc.) 
-2. Once the note-file has been created, you need to add the "location of the file" to the Resources.resx file - which can usually be found in "Debug" (or "Release") sub-folder named "Properties".
-      2.1 You can also add your own default directory (Where you'll store all the other note files). Simply replace the value of the "Directory" resource in the Resources.resx
+2. Once the note-file has been created, you need to add the "location of the file" to the Resources.resx file - which can usually be found in "Debug" (or "Release") sub-folder named "Properties". You can also add your own default directory (Where you'll store all the other note files). Simply replace the value of the "Directory" resource in the Resources.resx
 3. Once the resource has been added, you need to create a new radio-button for the specific song on "Form1" (Likely through Visual Studio)
 4. Once the radio button has been created, you need to find "button1_Click" in Form1's code-behind, and add a new condition to cater for the option selected. Simply set the "songToPlay" object to our newly added resource, and the rest of the code will cater for the new radio-button when the option is selected.
 
