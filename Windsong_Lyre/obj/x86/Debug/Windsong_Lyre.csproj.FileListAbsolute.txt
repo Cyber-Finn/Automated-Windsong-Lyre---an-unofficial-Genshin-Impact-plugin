@@ -1,0 +1,32 @@
+C:\Users\stoosthuizen\OneDrive\OneDrive - Capitec Bank Ltd\Documents\Visual Studio 2010\Projects\Windsong_Lyre\Windsong_Lyre\bin\Debug\Windsong_Lyre.exe
+C:\Users\stoosthuizen\OneDrive\OneDrive - Capitec Bank Ltd\Documents\Visual Studio 2010\Projects\Windsong_Lyre\Windsong_Lyre\bin\Debug\Windsong_Lyre.pdb
+C:\Users\stoosthuizen\OneDrive\OneDrive - Capitec Bank Ltd\Documents\Visual Studio 2010\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.Form1.resources
+C:\Users\stoosthuizen\OneDrive\OneDrive - Capitec Bank Ltd\Documents\Visual Studio 2010\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.Properties.Resources.resources
+C:\Users\stoosthuizen\OneDrive\OneDrive - Capitec Bank Ltd\Documents\Visual Studio 2010\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.csproj.GenerateResource.Cache
+C:\Users\stoosthuizen\OneDrive\OneDrive - Capitec Bank Ltd\Documents\Visual Studio 2010\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.exe
+C:\Users\stoosthuizen\OneDrive\OneDrive - Capitec Bank Ltd\Documents\Visual Studio 2010\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.pdb
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\bin\Debug\Properties\Resources.resx
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\bin\Debug\Properties\Resources.Designer.cs
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\bin\Debug\Windsong_Lyre.exe.config
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\bin\Debug\Windsong_Lyre.exe
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\bin\Debug\Windsong_Lyre.pdb
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.csproj.AssemblyReference.cache
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.csproj.SuggestedBindingRedirects.cache
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.Form1.resources
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.Properties.Resources.resources
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.csproj.GenerateResource.cache
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.csproj.CoreCompileInputs.cache
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.exe
+C:\Users\Steph\OneDrive\Documents\Visual Studio 2022\Projects\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.pdb
+C:\Users\Steph\source\repos\C#\Windsong_Lyre\Windsong_Lyre\bin\Debug\Properties\Resources.resx
+C:\Users\Steph\source\repos\C#\Windsong_Lyre\Windsong_Lyre\bin\Debug\Properties\Resources.Designer.cs
+C:\Users\Steph\source\repos\C#\Windsong_Lyre\Windsong_Lyre\bin\Debug\Windsong_Lyre.exe.config
+C:\Users\Steph\source\repos\C#\Windsong_Lyre\Windsong_Lyre\bin\Debug\Windsong_Lyre.exe
+C:\Users\Steph\source\repos\C#\Windsong_Lyre\Windsong_Lyre\bin\Debug\Windsong_Lyre.pdb
+C:\Users\Steph\source\repos\C#\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.csproj.AssemblyReference.cache
+C:\Users\Steph\source\repos\C#\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.Form1.resources
+C:\Users\Steph\source\repos\C#\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.Properties.Resources.resources
+C:\Users\Steph\source\repos\C#\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.csproj.GenerateResource.cache
+C:\Users\Steph\source\repos\C#\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.csproj.CoreCompileInputs.cache
+C:\Users\Steph\source\repos\C#\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.exe
+C:\Users\Steph\source\repos\C#\Windsong_Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.pdb
