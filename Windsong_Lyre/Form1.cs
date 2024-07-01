@@ -43,27 +43,16 @@ namespace Windsong_Lyre
         public Form1()
         {
             InitializeComponent();
-
-            //hiding these for now
-            radioStarsetMonster.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            labelStatus.ResetText();
             labelStatus.Text = "Status: Running";
             DateTime start = DateTime.Now;
 
             string songToPlay = "";
 
-            if (radioWellerman.Checked)
-            {
-                songToPlay = Resources.WellerFileName;
-            }
-
-            if (radioPortOrmos.Checked)
-            {
-                songToPlay = Resources.PortOrmosThemeFileName;
-            }
 
             if (radio200BpmMonster.Checked)
             {
@@ -75,20 +64,11 @@ namespace Windsong_Lyre
                 songToPlay = Resources.VanaranaThemeFileName;
             }
 
-            if (radioSinkObliv.Checked)
-            {
-                songToPlay = Resources.SinkIntoOblivionFileName;
-            }
-
             if (radioRaidenTheme.Checked)
             {
                 songToPlay = Resources.RaidenShogunThemeFileName;
             }
 
-            if (radioYourName.Checked)
-            {
-                songToPlay = Resources.YourNameThemeFileName;
-            }
 
             if (radioTossACoin.Checked)
             {
@@ -116,11 +96,6 @@ namespace Windsong_Lyre
                 songToPlay = Resources.SpiritedAwayTheme;
             }
 
-            if (radioStarsetMonster.Checked)
-            {
-                var starMonster = new StarsetMonster();
-                starMonster.Play();
-            }
 
             playOurSong.Play(Resources.Directory, songToPlay);
 
