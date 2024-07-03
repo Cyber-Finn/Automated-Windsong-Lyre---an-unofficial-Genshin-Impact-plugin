@@ -31,7 +31,7 @@ By following these steps:
 ## Adding new songs:
 1. Create a text file that contains both the **Keys-to-press**, and the **Duration** of the press (how long it needs to wait before playing the next note).
     - Do not place numbers and characters on the same line.
-    - You can find Sample Files included in this project under the "Notes Backup" folder -> (here)[https://github.com/Cyber-Finn/Automated-Windsong-Lyre---an-unofficial-Genshin-Impact-plugin/tree/main/Notes%20backup].
+    - You can find Sample Files included in this project under the "Notes Backup" folder -> [here](https://github.com/Cyber-Finn/Automated-Windsong-Lyre---an-unofficial-Genshin-Impact-plugin/tree/main/Notes%20backup).
     - The general order should be: **Keys-to-press**, first, then the **Duration**, second.
 
 
