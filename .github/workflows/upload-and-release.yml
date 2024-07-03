@@ -1,0 +1,44 @@
+name: Create Release
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # This is how we give the release some meaningful info - based off the last commit message and description
+      - name: Get last commit message
+        id: get_commit_message
+        run: echo "::set-output name=commit_message::$(git log -1 --pretty=format:'%s%n%n%b')"
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          draft: false
+          prerelease: false
+          release_name: ${{ github.ref }}
+          tag_name: ${{ github.ref }}
+          #body: ${{ github.event.pull_request.title }}  # Use the pull request title only as the release info
+          body: ${{ steps.get_commit_message.outputs.commit_message }}
+
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: automated-windsong-lyre
+          path: ./downloaded-artifact/
+
+      # Add any other steps you need (e.g., creating a zip file, etc.)
+
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./downloaded-artifact/*
+          asset_name: automated-windsong-lyre.zip
+          asset_content_type: application/zip
