@@ -20,12 +20,10 @@ Please don't exit the game until the song has stopped, as the tool will continue
 - PC only - this tool doesn't work on consoles or mobile devices of any kind.
 
 ## Additional notes: 
-You can configure the tool to play virtually any song. 
-<br>
-By following these steps:  
-- Create a song file for the app to read (more on this below!)
-- Place the file into a memorable folder on your pc
-- Select that folder in the App - as mentioned in the usage instructions, and click Play.
+You can configure the tool to play virtually any song, by following these steps:  
+1. Create a song file for the app to read (more on this below!)
+2. Place the file into a memorable folder on your pc
+3. Select that folder in the App - as mentioned in the usage instructions, and click Play.
 
 
 ## Adding new songs:
