@@ -23,9 +23,9 @@ Please don't exit the game until the song has stopped, as the tool will continue
 You can configure the tool to play virtually any song. 
 <br>
 By following these steps:  
-    - Create a song file for the app to read (more on this below!)
-    - Place the file into a memorable folder on your pc
-    - Select that folder in the App - as mentioned in the usage instructions, and click Play.
+- Create a song file for the app to read (more on this below!)
+- Place the file into a memorable folder on your pc
+- Select that folder in the App - as mentioned in the usage instructions, and click Play.
 
 
 ## Adding new songs:
