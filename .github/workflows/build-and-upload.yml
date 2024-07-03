@@ -1,0 +1,36 @@
+name: Build and Upload Artifact
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '4.8.x'
+
+      - name: Build C# project
+        run: dotnet build --configuration Release
+        
+      - name: Create artifacts directory
+        run: mkdir -p artifacts
+
+      - name: Create artifact
+      # the "bin/Release/" refers to where our C# app builds its binaries once we've compiled/built. We need to copy from here to a location on github
+      # the Action will build the app and deploy it to this same location - so we're indeed using the file we built above - it's just a bit weird because it checks our config to figure out where to place/fetch the file
+        run: |
+          mkdir -p artifacts
+          cp -r bin/Release/* artifacts/ 
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: automated-windsong-lyre
+          path: artifacts/
