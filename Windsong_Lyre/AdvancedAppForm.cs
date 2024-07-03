@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Windsong_Lyre
 {
@@ -15,13 +16,14 @@ namespace Windsong_Lyre
     {
         private string _folderName = string.Empty;
         private List<string> _songsInDirectory = new List<string>();
-        private bool _songHasFinished = false;
         private bool _stillOpen = true;
         private int _currentSong = 0;
-        private int _currentSongStartIndex = 0;
+
         // Create a BackgroundWorker instance for the music player (multithreading, basically)
         private BackgroundWorker backgroundWorker1 = new BackgroundWorker();
-        
+
+        private AdvancedPlaySong advancedPlaySong = new AdvancedPlaySong();
+
         public AdvancedAppForm()
         {
             InitializeComponent();
@@ -34,11 +36,14 @@ namespace Windsong_Lyre
             btnPreviousSong.Enabled = isEnabled;
             btnPause.Enabled = isEnabled;
             btnPlay.Enabled = isEnabled;
+            numberUpDown_SongSpeed.Enabled = isEnabled;
         }
         private void SetUpHandlers_BackgroundWorker()
         {
             //to allow us to close the worker later on
             backgroundWorker1.WorkerSupportsCancellation = true;
+            //allows us to update the progressbar
+            backgroundWorker1.WorkerReportsProgress = true;
 
             // Set up event handlers
             backgroundWorker1.DoWork += HandleBackgroundWorker_DoWork;
@@ -58,12 +63,40 @@ namespace Windsong_Lyre
             {
                 _folderName = fbDialog.SelectedPath;
                 txtboxHuntingFolder.Text = _folderName;
+                AdvancePlaySongUpdateFolderName(_folderName);
+
                 Handle_SongsInDirectory();
 
                 //load up the first song by default
                 updateTextBox_CurrentSong(_songsInDirectory[_currentSong]);
+
+                AdvancePlaySongUpdateFileName(_songsInDirectory[_currentSong]);
+
                 HandleButtons_Enabled(true);
+                updateSongoffsetSpeed();
             }
+        }
+
+        /// <summary>
+        /// Tells the app which song file to actually start playing
+        /// </summary>
+        /// <param name="songName"></param>
+        private void AdvancePlaySongUpdateFileName(string songName)
+        {
+            advancedPlaySong.advancedOpenTargetFile._Filename = songName;
+        }
+        /// <summary>
+        /// Tells the app which Folder it needs to browse
+        /// </summary>
+        /// <param name="folderName"></param>
+        private void AdvancePlaySongUpdateFolderName(string folderName)
+        {
+            advancedPlaySong.advancedOpenTargetFile._Directory = folderName;
+        }
+        private void updateSongoffsetSpeed()
+        {
+            int _songSpeedOffset = Convert.ToInt32(numberUpDown_SongSpeed.Value);
+            advancedPlaySong.advancedOpenTargetFile._SongSpeedOffset = _songSpeedOffset;
         }
 
         private void Clear_SongsInDirectory()
@@ -131,9 +164,12 @@ namespace Windsong_Lyre
         {
             while (_stillOpen)
             {
-                // Your file creation logic here
-                // ...
+                //play the currently selected song
+                advancedPlaySong.Play();
+                handleWhenSongHasFinishedButNoPauseYet();
 
+                //update the progress bar
+                backgroundWorker1.ReportProgress(advancedPlaySong.advancedOpenTargetFile.GetPercentageOfSongPlayed());
 
                 // Check for cancellation
                 if (backgroundWorker1.CancellationPending)
@@ -143,6 +179,25 @@ namespace Windsong_Lyre
                 }
             }
         }
+
+        private void handleWhenSongHasFinishedButNoPauseYet()
+        {
+            if(advancedPlaySong.advancedOpenTargetFile._SongHasFinished)
+            {
+                //thread safety
+                if (InvokeRequired)
+                {
+                    // Invoke the UI update on the main thread
+                    Invoke(new Action(() => HandleNextSong()));
+                }
+                else
+                {
+                    // Directly update the UI (if already on the main thread)
+                    HandleNextSong();//just play the next song
+                }
+            }
+        }
+
         /// <summary>
         /// happens when the event finishes, or the user hits cancel
         /// </summary>
@@ -154,20 +209,34 @@ namespace Windsong_Lyre
 
         private void btnPreviousSong_Click(object sender, EventArgs e)
         {
-            if(_currentSong > 0)
+            HandlePreviousSong();
+        }
+        private void HandlePreviousSong()
+        {
+            numberUpDown_SongSpeed.Value = 1;
+
+            if (_currentSong > 0)
             {
                 _currentSong--;
             }
             else //wrap it back to the last one in the list
             {
-                _currentSong = _songsInDirectory.Count-1;
+                _currentSong = _songsInDirectory.Count - 1;
             }
             updateTextBox_CurrentSong();
+            AdvancePlaySongUpdateFileName(_songsInDirectory[_currentSong]);
         }
 
         private void btnNextSong_Click(object sender, EventArgs e)
         {
-            if (_currentSong < _songsInDirectory.Count-1)
+            HandleNextSong();
+        }
+        private void HandleNextSong()
+        {
+            //reset the value of the speed to 1x Speed (default value)
+            numberUpDown_SongSpeed.Value = 1;
+
+            if (_currentSong < _songsInDirectory.Count - 1)
             {
                 _currentSong++;
             }
@@ -176,19 +245,30 @@ namespace Windsong_Lyre
                 _currentSong = 0;
             }
             updateTextBox_CurrentSong();
+            AdvancePlaySongUpdateFileName(_songsInDirectory[_currentSong]);
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
             _stillOpen = true;
-            // Start the background worker
-            backgroundWorker1.RunWorkerAsync();
+            // Start the background worker, only if it's not already running
+            if(!backgroundWorker1.IsBusy)
+            {
+                backgroundWorker1.RunWorkerAsync();
+                handleBtnPlayVisibility(false);
+            }
+        }
+        private void handleBtnPlayVisibility(bool visible)
+        {
+            btnPlay.Enabled = visible;
         }
 
         private void btnPause_Click(object sender, EventArgs e)
         {
             HandleBackgroundWorker_Close();
             _stillOpen = false;
+            advancedPlaySong.advancedOpenTargetFile._SongHasBeenPaused = true;
+            handleBtnPlayVisibility(true);
         }
 
         private void formClosingEvent(object sender, FormClosingEventArgs e)
@@ -196,8 +276,13 @@ namespace Windsong_Lyre
             HandleBackgroundWorker_Close();
             backgroundWorker1.Dispose();
             _stillOpen = false;
-            //terminate the current process (Further means of freeing up the resources for if the others didnt work)
+            //terminate the current process (Further means of freeing up the resources, in case the others didnt work)
             Environment.Exit(0);
+        }
+
+        private void numberUpDown_SongSpeed_ValueChanged(object sender, EventArgs e)
+        {
+            updateSongoffsetSpeed();
         }
     }
 }

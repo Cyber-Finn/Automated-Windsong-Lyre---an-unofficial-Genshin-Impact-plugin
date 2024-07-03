@@ -9,9 +9,12 @@ namespace Windsong_Lyre
 {
     class AdvancedPlaySong
     {
-        public void Play(string directory, string filename,int startingIndex)
+        public AdvancedOpenTargetFile advancedOpenTargetFile = new AdvancedOpenTargetFile();
+
+        public void Play()
         {
             Thread.Sleep(5000);
+            advancedOpenTargetFile.openTargetFile();
         }    
     }
 }

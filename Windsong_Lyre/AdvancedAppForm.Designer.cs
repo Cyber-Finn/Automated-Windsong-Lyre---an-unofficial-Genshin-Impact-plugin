@@ -39,18 +39,21 @@
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.btnPreviousSong = new System.Windows.Forms.Button();
             this.btnNextSong = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numberUpDown_SongSpeed = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numberUpDown_SongSpeed)).BeginInit();
             this.SuspendLayout();
             // 
             // progressbarSongStatus
             // 
-            this.progressbarSongStatus.Location = new System.Drawing.Point(136, 139);
+            this.progressbarSongStatus.Location = new System.Drawing.Point(136, 167);
             this.progressbarSongStatus.Name = "progressbarSongStatus";
             this.progressbarSongStatus.Size = new System.Drawing.Size(366, 42);
             this.progressbarSongStatus.TabIndex = 0;
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(528, 139);
+            this.btnPlay.Location = new System.Drawing.Point(528, 167);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(82, 42);
             this.btnPlay.TabIndex = 1;
@@ -60,7 +63,7 @@
             // 
             // btnPause
             // 
-            this.btnPause.Location = new System.Drawing.Point(616, 139);
+            this.btnPause.Location = new System.Drawing.Point(616, 167);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(82, 42);
             this.btnPause.TabIndex = 2;
@@ -71,7 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 98);
+            this.label1.Location = new System.Drawing.Point(12, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 3;
@@ -80,7 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 150);
+            this.label2.Location = new System.Drawing.Point(12, 178);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 4;
@@ -88,7 +91,7 @@
             // 
             // txtboxCurrentSongName
             // 
-            this.txtboxCurrentSongName.Location = new System.Drawing.Point(136, 95);
+            this.txtboxCurrentSongName.Location = new System.Drawing.Point(136, 123);
             this.txtboxCurrentSongName.Name = "txtboxCurrentSongName";
             this.txtboxCurrentSongName.ReadOnly = true;
             this.txtboxCurrentSongName.Size = new System.Drawing.Size(366, 26);
@@ -123,7 +126,7 @@
             // 
             // btnPreviousSong
             // 
-            this.btnPreviousSong.Location = new System.Drawing.Point(528, 87);
+            this.btnPreviousSong.Location = new System.Drawing.Point(528, 115);
             this.btnPreviousSong.Name = "btnPreviousSong";
             this.btnPreviousSong.Size = new System.Drawing.Size(82, 42);
             this.btnPreviousSong.TabIndex = 9;
@@ -133,7 +136,7 @@
             // 
             // btnNextSong
             // 
-            this.btnNextSong.Location = new System.Drawing.Point(616, 87);
+            this.btnNextSong.Location = new System.Drawing.Point(616, 115);
             this.btnNextSong.Name = "btnNextSong";
             this.btnNextSong.Size = new System.Drawing.Size(82, 42);
             this.btnNextSong.TabIndex = 10;
@@ -141,13 +144,47 @@
             this.btnNextSong.UseVisualStyleBackColor = true;
             this.btnNextSong.Click += new System.EventHandler(this.btnNextSong_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(529, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 20);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Speed:";
+            // 
+            // numberUpDown_SongSpeed
+            // 
+            this.numberUpDown_SongSpeed.Location = new System.Drawing.Point(595, 74);
+            this.numberUpDown_SongSpeed.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numberUpDown_SongSpeed.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numberUpDown_SongSpeed.Name = "numberUpDown_SongSpeed";
+            this.numberUpDown_SongSpeed.Size = new System.Drawing.Size(103, 26);
+            this.numberUpDown_SongSpeed.TabIndex = 12;
+            this.numberUpDown_SongSpeed.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numberUpDown_SongSpeed.ValueChanged += new System.EventHandler(this.numberUpDown_SongSpeed_ValueChanged);
+            // 
             // AdvancedAppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(735, 216);
+            this.ClientSize = new System.Drawing.Size(735, 233);
+            this.Controls.Add(this.numberUpDown_SongSpeed);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnNextSong);
             this.Controls.Add(this.btnPreviousSong);
             this.Controls.Add(this.btnOpenFolder);
@@ -164,6 +201,7 @@
             this.ShowIcon = false;
             this.Text = "Advanced Windsong Controls";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formClosingEvent);
+            ((System.ComponentModel.ISupportInitialize)(this.numberUpDown_SongSpeed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +220,7 @@
         private System.Windows.Forms.Button btnOpenFolder;
         private System.Windows.Forms.Button btnPreviousSong;
         private System.Windows.Forms.Button btnNextSong;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numberUpDown_SongSpeed;
     }
 }
