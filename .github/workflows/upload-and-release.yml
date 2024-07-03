@@ -26,9 +26,6 @@ jobs:
         #run: echo "::set-output name=commit_message::$(git log -1 --pretty=format:'%s%n%n%b')"
         run: echo "commit_message=$(git log -1 --pretty=format:'%s%n%n%b')" >> $GITHUB_ENV
 
-      - name: Set environment token variable
-        run: echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
-
 
       - name: Create Release
         id: create_release
@@ -41,6 +38,8 @@ jobs:
           #body: ${{ github.event.pull_request.title }}  # Use the pull request title only as the release info
           #body: ${{ steps.get_commit_message.outputs.commit_message }}
           body: ${{ env.commit_message }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download artifact
         uses: actions/download-artifact@v2
@@ -55,3 +54,5 @@ jobs:
           asset_path: ./downloaded-artifact/*
           asset_name: automated-windsong-lyre.zip
           asset_content_type: application/zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
