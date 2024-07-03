@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace Windsong_Lyre
         public int _SongSpeedOffset = 1;
 
         public bool _SongHasFinished = false; //might not use this
+        public AdvancedAppForm callingClass = null;
 
         /// <summary>
         /// This helps us prevent a scenario where the app has requested closure, but the thread is stuck in the for-loop until the song is finished
@@ -31,14 +33,18 @@ namespace Windsong_Lyre
         public string _Directory = string.Empty;
         public string _Filename = string.Empty;
 
-        public int GetPercentageOfSongPlayed()
+        public double GetPercentageOfSongPlayed()
         {
-            return (_CurrentSongStartIndex/ _CurrentSongNumberOfLines)*100;
+            double answer = ((_CurrentSongStartIndex * 100.0) / _CurrentSongNumberOfLines);
+            return answer;
         }
 
 
         public void openTargetFile()
         {
+            //Reset the progress bar on the app's main form
+            callingClass.backgroundWorker1.ReportProgress(0);
+
             string fullPath = _Directory + "\\" + _Filename;
 
             if (Directory.Exists(_Directory))
@@ -69,13 +75,17 @@ namespace Windsong_Lyre
 
             _CurrentSongNumberOfLines = _CurrentSongFileContents.Count;
 
-            for (int i = 0; i < _CurrentSongFileContents.Count; i++)
+            for (int i = _CurrentSongStartIndex; i < _CurrentSongFileContents.Count; i++)
             {
                 if(!_SongHasBeenPaused)
                 {
                     if ((_CurrentSongFileContents[i] != "") && (_CurrentSongFileContents[i] != " ") && (_CurrentSongFileContents[i] != null))
                     {
                         _CurrentSongStartIndex = i;
+
+                        //update the progress bar on the app's main form
+                        callingClass.backgroundWorker1.ReportProgress(Convert.ToInt32(GetPercentageOfSongPlayed()));
+                        //callingClass.progressbarSongStatus.Value = Convert.ToInt32(GetPercentageOfSongPlayed());
 
                         try //convert the element to an int
                         {
@@ -95,7 +105,7 @@ namespace Windsong_Lyre
                                     if (character != ' ')
                                     {
                                         //comment this out when debugging -> or else we make changes while debugging
-                                        SendKeys.SendWait("{" + character + "}");
+                                        //SendKeys.SendWait("{" + character + "}");
                                     }
                                 }
                             }

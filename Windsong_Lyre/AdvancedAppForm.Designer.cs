@@ -46,6 +46,7 @@
             // 
             // progressbarSongStatus
             // 
+            this.progressbarSongStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.progressbarSongStatus.Location = new System.Drawing.Point(136, 167);
             this.progressbarSongStatus.Name = "progressbarSongStatus";
             this.progressbarSongStatus.Size = new System.Drawing.Size(366, 42);
@@ -208,8 +209,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ProgressBar progressbarSongStatus;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Label label1;
@@ -222,5 +221,6 @@
         private System.Windows.Forms.Button btnNextSong;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numberUpDown_SongSpeed;
+        public System.Windows.Forms.ProgressBar progressbarSongStatus;
     }
 }

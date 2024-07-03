@@ -20,13 +20,15 @@ namespace Windsong_Lyre
         private int _currentSong = 0;
 
         // Create a BackgroundWorker instance for the music player (multithreading, basically)
-        private BackgroundWorker backgroundWorker1 = new BackgroundWorker();
+        public BackgroundWorker backgroundWorker1 = new BackgroundWorker();
 
         private AdvancedPlaySong advancedPlaySong = new AdvancedPlaySong();
 
         public AdvancedAppForm()
         {
             InitializeComponent();
+            //pass this object down the line (We'll use this for accessing and updating our controls)
+            advancedPlaySong.advancedOpenTargetFile.callingClass = this;
             SetUpHandlers_BackgroundWorker();
             HandleButtons_Enabled(false);
         }
@@ -50,11 +52,14 @@ namespace Windsong_Lyre
             backgroundWorker1.RunWorkerCompleted += HandleBackgroundWorker_WhenWorkCompleted;
 
             //allows us to update the progressbar in the background thread
-            backgroundWorker1.ProgressChanged += (sender, e) =>
-            {
-                progressbarSongStatus.Value = e.ProgressPercentage;
-            };
+            backgroundWorker1.ProgressChanged += backgroundWorker1_ProgressChanged;
         }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressbarSongStatus.Value = e.ProgressPercentage;
+        }
+
 
         private void btnOpenFolder_Click(object sender, EventArgs e)
         {
@@ -164,12 +169,14 @@ namespace Windsong_Lyre
         {
             while (_stillOpen)
             {
+                //pass this object down the line (We'll use this for accessing and updating our controls)
+                advancedPlaySong.advancedOpenTargetFile.callingClass = this;
                 //play the currently selected song
                 advancedPlaySong.Play();
                 handleWhenSongHasFinishedButNoPauseYet();
 
                 //update the progress bar
-                backgroundWorker1.ReportProgress(advancedPlaySong.advancedOpenTargetFile.GetPercentageOfSongPlayed());
+                //backgroundWorker1.ReportProgress(advancedPlaySong.advancedOpenTargetFile.GetPercentageOfSongPlayed());
 
                 // Check for cancellation
                 if (backgroundWorker1.CancellationPending)
