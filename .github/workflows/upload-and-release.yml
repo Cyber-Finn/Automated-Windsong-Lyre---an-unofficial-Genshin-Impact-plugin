@@ -1,8 +1,13 @@
 name: Create Release
 on:
   pull_request:
+    branches:
+      - release
     types:
       - closed
+  push:
+    branches:
+      - release
 
 jobs:
   release:
