@@ -12,6 +12,10 @@ on:
 jobs:
   release:
     runs-on: windows-latest
+    permissions:
+          contents: write
+          actions: write
+          attestations: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -47,8 +51,3 @@ jobs:
           asset_path: ./downloaded-artifact/*
           asset_name: automated-windsong-lyre.zip
           asset_content_type: application/zip
-    permissions:
-          contents: write
-          actions: write
-          attestations: write
-
