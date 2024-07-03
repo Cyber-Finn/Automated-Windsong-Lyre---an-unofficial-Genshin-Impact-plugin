@@ -1,40 +1,41 @@
 # Notes:
-This tool will allow you to play any songs on Genshin Impact's Windsong lyre.
-<br>
-This tool should be used in the following way:
-1. Clone the repository and place the contents of the "Notes backup" folder into the following location on your computer:
-``` 
-C:\WindsongLyre Notes 
-```
-2. Simply open the application (Do this while "Genshin Impact" is running and the "Windsong Lyre" or another musical instrument is in use by your character)
-3. Once you've selected a song to play, simply click the "Play" button, then switch back to the game window. You will have 5 seconds before the tool starts pressing keys for you.
+This tool will allow you to play any songs on Genshin Impact's Windsong lyre and other instruments, as well as music in any game that allows keyboard input for musical instruments.
 <br>
 When in use, the tool will press combinations of buttons on your keyboard for you - to generate musical notes in-game and to allow you to automatically play the song that you've selected.
 <br>
-Please dont exit the game until the song has stopped, as the tool will continue to press keys until the song stops, or you close the tool window
+Please don't exit the game until the song has stopped, as the tool will continue to press keys until the song stops, or you close the tool window. This can become pretty messy if you've got something important open
 
-## Languages used: 
-C# only. Requires .Net to run
+## How to use the app:
+1. Simply open the application (Do this while "Genshin Impact" is running **and** the "Windsong Lyre" or another musical instrument is in use by your character).
+2. Click the "Advanced" option on the first window, and "Open a folder" on the second window, once that opens.
+3. Once you've selected a folder, the app will choose and display the first song. You can use the Next and Previous buttons to select a specific song from the folder.
+4. Simply click the "Play" button, then switch back to the Genshin Impact game window. You will have 5 seconds before the tool starts pressing keys for you.
+<br>
+
+## Languages used and Requirements: 
+- C# only. 
+- Requires .Net 4.8 or higher to run
 
 ## Target System: 
-PC only - this doesn't work on consoles or mobile devices of any kind.
+- PC only - this tool doesn't work on consoles or mobile devices of any kind.
 
 ## Additional notes: 
 You can configure the tool to play virtually any song. 
 <br>
-Just create a file for the app to read (Which can be placed into the folder from Step 1, above).
-<br>
-Configuring the files in the right format can be a bit tricky, so that deserves it's own section of this ReadMe (found below).
+By following these steps:  
+    - Create a song file for the app to read (more on this below!)
+    - Place the file into a memorable folder on your pc
+    - Select that folder in the App - as mentioned in the usage instructions, and click Play.
 
 
-## Configuring the note-files or adding new songs:
-1. Create a text file that contains both the key-to-press, and the duration of the note (You can look at some of the Sample files included in this project to get an idea of what to do, but the structure should be "key to press", then on a new line, "duration of note", etc.) 
-2. Once the note-file has been created, you need to add the "location of the file" to the Resources.resx file - which can usually be found in "Debug" (or "Release") sub-folder named "Properties". You can also add your own default directory (Where you'll store all the other note files). Simply replace the value of the "Directory" resource in the Resources.resx
-3. Once the resource has been added, you need to create a new radio-button for the specific song on "Form1" (Likely through Visual Studio)
-4. Once the radio button has been created, you need to find "button1_Click" in Form1's code-behind, and add a new condition to cater for the option selected. Simply set the "songToPlay" object to our newly added resource, and the rest of the code will cater for the new radio-button when the option is selected.
+## Adding new songs:
+1. Create a text file that contains both the **Keys-to-press**, and the **Duration** of the press (how long it needs to wait before playing the next note).
+    - Do not place numbers and characters on the same line.
+    - You can find Sample Files included in this project under the "Notes Backup" folder -> (here)[https://github.com/Cyber-Finn/Automated-Windsong-Lyre---an-unofficial-Genshin-Impact-plugin/tree/main/Notes%20backup].
+    - The general order should be: **Keys-to-press**, first, then the **Duration**, second.
 
 
-## For those that need help understanding the general note-mappings:
+## Understanding the general note-to-key mappings for Genshin Impact:
 1. The top row of notes (treble clef, 𝄞) are mapped to the letters Q to U,
 2. The middle row (alto clef, 𝄡) is mapped from A to J,
 3. And the bottom row (bass clef, 𝄢) from Z to M.

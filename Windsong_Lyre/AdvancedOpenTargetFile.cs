@@ -105,7 +105,7 @@ namespace Windsong_Lyre
                                     if (character != ' ')
                                     {
                                         //comment this out when debugging -> or else we make changes while debugging
-                                        //SendKeys.SendWait("{" + character + "}");
+                                        SendKeys.SendWait("{" + character + "}");
                                     }
                                 }
                             }
