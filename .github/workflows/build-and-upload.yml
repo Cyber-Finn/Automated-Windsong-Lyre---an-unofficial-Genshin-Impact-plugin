@@ -22,9 +22,6 @@ jobs:
        
       #- name: Build project
         #run: msbuild Windsong_Lyre.sln /p:Configuration=Release
-        
-      - name: Create artifacts directory
-        run: mkdir -p artifacts
 
       - name: Create artifact
       # the "bin/Release/" refers to where our C# app builds its binaries once we've compiled/built. We need to copy from here to a location on github
