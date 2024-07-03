@@ -28,7 +28,7 @@ jobs:
       # the Action will build the app and deploy it to this same location - so we're indeed using the file we built above - it's just a bit weird because it checks our config to figure out where to place/fetch the file
         run: |
           mkdir -p artifacts
-          cp -r bin/Release/* artifacts/ 
+          cp -r Windsong_Lyre/bin/Release/* artifacts/ 
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
