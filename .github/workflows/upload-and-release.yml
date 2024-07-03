@@ -19,7 +19,8 @@ jobs:
       # This is how we give the release some meaningful info - based off the last commit message and description
       - name: Get last commit message
         id: get_commit_message
-        run: echo "::set-output name=commit_message::$(git log -1 --pretty=format:'%s%n%n%b')"
+        #run: echo "::set-output name=commit_message::$(git log -1 --pretty=format:'%s%n%n%b')"
+        run: echo "commit_message=$(git log -1 --pretty=format:'%s%n%n%b')" >> $GITHUB_ENV
 
       - name: Create Release
         id: create_release
@@ -30,7 +31,8 @@ jobs:
           release_name: ${{ github.ref }}
           tag_name: ${{ github.ref }}
           #body: ${{ github.event.pull_request.title }}  # Use the pull request title only as the release info
-          body: ${{ steps.get_commit_message.outputs.commit_message }}
+          #body: ${{ steps.get_commit_message.outputs.commit_message }}
+          body: ${{ env.commit_message }}
 
       - name: Download artifact
         uses: actions/download-artifact@v2
