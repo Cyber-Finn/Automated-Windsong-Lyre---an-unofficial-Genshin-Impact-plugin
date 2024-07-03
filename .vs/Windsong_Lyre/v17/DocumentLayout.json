@@ -3,80 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\advancedappform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\advancedappform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\windsong_lyre\\advancedappform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\advancedappform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\opentargetfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\advancedplaysong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\advancedplaysong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\advancedopentargetfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\advancedopentargetfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\windsong_lyre\\opentargetfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\opentargetfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\portormos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\portormos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\starsetmonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\starsetmonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\sinkintooblivion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\sinkintooblivion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\toss_a_coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\toss_a_coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\adventuretimecomealong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\adventuretimecomealong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\vanaranatheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\vanaranatheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\wellermanshanty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\wellermanshanty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\honkaitrue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\honkaitrue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\howlsmovingcastle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\howlsmovingcastle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\newstarsetmonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\newstarsetmonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\yourname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\yourname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\spiritedaway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\spiritedaway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\raidentheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\raidentheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\playsong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\windsong_lyre\\playsong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\playsong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|c:\\users\\steph\\source\\repos\\c#\\windsong lyre\\windsong_lyre\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\windsong_lyre\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\windsong_lyre\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7E94E8F-C850-46FA-ACC4-ADBA3C826384}|Windsong_Lyre\\Windsong_Lyre.csproj|solutionrelative:windsong_lyre\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,148 +46,81 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\Form1.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\Form1.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\Form1.cs",
-              "RelativeToolTip": "Windsong_Lyre\\Form1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAcAAAA",
+              "DocumentIndex": 3,
+              "Title": "AdvancedOpenTargetFile.cs",
+              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\AdvancedOpenTargetFile.cs",
+              "RelativeDocumentMoniker": "Windsong_Lyre\\AdvancedOpenTargetFile.cs",
+              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\AdvancedOpenTargetFile.cs",
+              "RelativeToolTip": "Windsong_Lyre\\AdvancedOpenTargetFile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:50:09.452Z",
+              "WhenOpened": "2024-07-03T05:24:47.968Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StarsetMonster.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\StarsetMonster.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\StarsetMonster.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\StarsetMonster.cs",
-              "RelativeToolTip": "Windsong_Lyre\\StarsetMonster.cs",
-              "ViewState": "AQIAAFIDAAAAAAAAAAAAAGADAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "AdvancedPlaySong.cs",
+              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\AdvancedPlaySong.cs",
+              "RelativeDocumentMoniker": "Windsong_Lyre\\AdvancedPlaySong.cs",
+              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\AdvancedPlaySong.cs",
+              "RelativeToolTip": "Windsong_Lyre\\AdvancedPlaySong.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:43:05.18Z",
+              "WhenOpened": "2024-07-03T05:23:45.867Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AdvancedAppForm.cs",
+              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\AdvancedAppForm.cs",
+              "RelativeDocumentMoniker": "Windsong_Lyre\\AdvancedAppForm.cs",
+              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\AdvancedAppForm.cs",
+              "RelativeToolTip": "Windsong_Lyre\\AdvancedAppForm.cs",
+              "ViewState": "AQIAAJwAAAAAAAAAAAAAAK4AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T19:28:29.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdvancedAppForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\AdvancedAppForm.cs",
+              "RelativeDocumentMoniker": "Windsong_Lyre\\AdvancedAppForm.cs",
+              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\AdvancedAppForm.cs [Design]",
+              "RelativeToolTip": "Windsong_Lyre\\AdvancedAppForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T19:07:28.451Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\Form1.cs",
               "RelativeDocumentMoniker": "Windsong_Lyre\\Form1.cs",
               "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\Form1.cs [Design]",
               "RelativeToolTip": "Windsong_Lyre\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:39:43.588Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Resources.resx",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\Properties\\Resources.resx",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\Properties\\Resources.resx",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\Properties\\Resources.resx",
-              "RelativeToolTip": "Windsong_Lyre\\Properties\\Resources.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-07-01T17:36:24.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T17:39:43.588Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Toss_A_Coin.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\Toss_A_Coin.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\Toss_A_Coin.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\Toss_A_Coin.cs",
-              "RelativeToolTip": "Windsong_Lyre\\Toss_A_Coin.cs",
-              "ViewState": "AQIAABUEAAAAAAAAAAAAAB0EAAAAAAAA",
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\Form1.cs",
+              "RelativeDocumentMoniker": "Windsong_Lyre\\Form1.cs",
+              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\Form1.cs",
+              "RelativeToolTip": "Windsong_Lyre\\Form1.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAADwv28AAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:15:12.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-01T17:50:09.452Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AdventureTimeComeAlong.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\AdventureTimeComeAlong.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\AdventureTimeComeAlong.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\AdventureTimeComeAlong.cs",
-              "RelativeToolTip": "Windsong_Lyre\\AdventureTimeComeAlong.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:14:18.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "HowlsMovingCastle.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\HowlsMovingCastle.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\HowlsMovingCastle.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\HowlsMovingCastle.cs",
-              "RelativeToolTip": "Windsong_Lyre\\HowlsMovingCastle.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:13:20.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "NewStarsetMonster.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\NewStarsetMonster.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\NewStarsetMonster.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\NewStarsetMonster.cs",
-              "RelativeToolTip": "Windsong_Lyre\\NewStarsetMonster.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:13:14.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "YourName.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\YourName.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\YourName.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\YourName.cs",
-              "RelativeToolTip": "Windsong_Lyre\\YourName.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:13:07.921Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SinkIntoOblivion.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\SinkIntoOblivion.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\SinkIntoOblivion.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\SinkIntoOblivion.cs",
-              "RelativeToolTip": "Windsong_Lyre\\SinkIntoOblivion.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:10:11.545Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PortOrmos.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\PortOrmos.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\PortOrmos.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\PortOrmos.cs",
-              "RelativeToolTip": "Windsong_Lyre\\PortOrmos.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:08:04.822Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "OpenTargetFile.cs",
               "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\OpenTargetFile.cs",
               "RelativeDocumentMoniker": "Windsong_Lyre\\OpenTargetFile.cs",
@@ -244,93 +133,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "HonkaiTrue.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\HonkaiTrue.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\HonkaiTrue.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\HonkaiTrue.cs",
-              "RelativeToolTip": "Windsong_Lyre\\HonkaiTrue.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:13:22.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "WellermanShanty.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\WellermanShanty.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\WellermanShanty.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\WellermanShanty.cs",
-              "RelativeToolTip": "Windsong_Lyre\\WellermanShanty.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:15:11.085Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "VanaranaTheme.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\VanaranaTheme.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\VanaranaTheme.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\VanaranaTheme.cs",
-              "RelativeToolTip": "Windsong_Lyre\\VanaranaTheme.cs",
-              "ViewState": "AQIAAMABAAAAAAAAAAAAANIBAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:10:25.457Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SpiritedAway.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\SpiritedAway.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\SpiritedAway.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\SpiritedAway.cs",
-              "RelativeToolTip": "Windsong_Lyre\\SpiritedAway.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:10:19.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "RaidenTheme.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\RaidenTheme.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\RaidenTheme.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\RaidenTheme.cs",
-              "RelativeToolTip": "Windsong_Lyre\\RaidenTheme.cs",
-              "ViewState": "AQIAANEAAAAAAAAAAAAAANUAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:08:12.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 5,
               "Title": "PlaySong.cs",
               "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\PlaySong.cs",
               "RelativeDocumentMoniker": "Windsong_Lyre\\PlaySong.cs",
               "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\PlaySong.cs",
               "RelativeToolTip": "Windsong_Lyre\\PlaySong.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAiAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-01T16:20:28.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\Program.cs",
-              "RelativeDocumentMoniker": "Windsong_Lyre\\Program.cs",
-              "ToolTip": "C:\\Users\\Steph\\source\\repos\\C#\\Windsong Lyre\\Windsong_Lyre\\Program.cs",
-              "RelativeToolTip": "Windsong_Lyre\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T16:20:23.516Z",
               "EditorCaption": ""
             }
           ]

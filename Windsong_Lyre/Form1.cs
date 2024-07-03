@@ -104,5 +104,12 @@ namespace Windsong_Lyre
             labelStatus.Text = "Status: Done";
             labelTimeTaken.Text = "Time Taken: " +(ended-start).ToString();
         }
+
+        private void btnSwitchToAdvanced_Click(object sender, EventArgs e)
+        {
+            AdvancedAppForm advancedAppForm = new AdvancedAppForm();
+            advancedAppForm.Show();
+            this.Hide();
+        }
     }
 }

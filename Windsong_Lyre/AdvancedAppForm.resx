@@ -117,43 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Directory" xml:space="preserve">
-    <value>C:\WindsongLyre Notes</value>
-  </data>
-  <data name="HonkaiTrueThemeFileName" xml:space="preserve">
-    <value>HonkaiTrueTheme.txt</value>
-  </data>
-  <data name="HowlsMovingCastleFileName" xml:space="preserve">
-    <value>HowlsMovingCastleTheme.txt</value>
-  </data>
-  <data name="PortOrmosThemeFileName" xml:space="preserve">
-    <value>PortOrmosTheme.txt</value>
-  </data>
-  <data name="RaidenShogunThemeFileName" xml:space="preserve">
-    <value>RaidenShogunTheme.txt</value>
-  </data>
-  <data name="SinkIntoOblivionFileName" xml:space="preserve">
-    <value>SinkIntoOblivion.txt</value>
-  </data>
-  <data name="SomeoneYouLovedFileName" xml:space="preserve">
-    <value>LewisCapaldi_SomeoneYouLoved.txt</value>
-  </data>
-  <data name="SpiritedAwayTheme" xml:space="preserve">
-    <value>SpiritedAwayTheme.txt</value>
-  </data>
-  <data name="StarsetMonster200bpmFileName" xml:space="preserve">
-    <value>StarsetMonster200Bpm.txt</value>
-  </data>
-  <data name="TossACoinToYourWitcherFileName" xml:space="preserve">
-    <value>TossACoinToYourWitcher.txt</value>
-  </data>
-  <data name="VanaranaThemeFileName" xml:space="preserve">
-    <value>GenshinVanaramaTheme.txt</value>
-  </data>
-  <data name="WellerFileName" xml:space="preserve">
-    <value>WellerManShanty.txt</value>
-  </data>
-  <data name="YourNameThemeFileName" xml:space="preserve">
-    <value>YourNameTheme.txt</value>
-  </data>
 </root>

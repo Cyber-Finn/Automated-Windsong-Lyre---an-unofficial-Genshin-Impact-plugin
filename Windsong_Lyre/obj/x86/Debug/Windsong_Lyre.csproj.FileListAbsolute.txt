@@ -42,3 +42,4 @@ C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\obj\x86\Debug\Windson
 C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.csproj.CoreCompileInputs.cache
 C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.exe
 C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.pdb
+C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\obj\x86\Debug\Windsong_Lyre.AdvancedAppForm.resources

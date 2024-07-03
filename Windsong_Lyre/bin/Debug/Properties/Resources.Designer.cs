@@ -115,7 +115,7 @@ namespace Windsong_Lyre.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SomeoneYouLoved.txt.
+        ///   Looks up a localized string similar to LewisCapaldi_SomeoneYouLoved.txt.
         /// </summary>
         internal static string SomeoneYouLovedFileName {
             get {
@@ -151,7 +151,7 @@ namespace Windsong_Lyre.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to VanaramaTheme.txt.
+        ///   Looks up a localized string similar to GenshinVanaramaTheme.txt.
         /// </summary>
         internal static string VanaranaThemeFileName {
             get {

@@ -48,11 +48,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnSwitchToAdvanced = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(75, 573);
+            this.button1.Location = new System.Drawing.Point(12, 573);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(300, 85);
@@ -256,11 +257,22 @@
             this.label14.TabIndex = 36;
             this.label14.Text = "v.Long (3min)";
             // 
+            // btnSwitchToAdvanced
+            // 
+            this.btnSwitchToAdvanced.Location = new System.Drawing.Point(329, 573);
+            this.btnSwitchToAdvanced.Name = "btnSwitchToAdvanced";
+            this.btnSwitchToAdvanced.Size = new System.Drawing.Size(158, 85);
+            this.btnSwitchToAdvanced.TabIndex = 37;
+            this.btnSwitchToAdvanced.Text = "Advanced Mode";
+            this.btnSwitchToAdvanced.UseVisualStyleBackColor = true;
+            this.btnSwitchToAdvanced.Click += new System.EventHandler(this.btnSwitchToAdvanced_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 671);
+            this.Controls.Add(this.btnSwitchToAdvanced);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
@@ -285,6 +297,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.ShowIcon = false;
             this.Text = "Windsong Lyre";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -313,6 +326,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnSwitchToAdvanced;
     }
 }
 

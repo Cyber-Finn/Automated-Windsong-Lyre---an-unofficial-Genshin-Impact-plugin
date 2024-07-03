@@ -49,6 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancedAppForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvancedAppForm.Designer.cs">
+      <DependentUpon>AdvancedAppForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdvancedOpenTargetFile.cs" />
+    <Compile Include="AdvancedPlaySong.cs" />
     <Compile Include="AdventureTimeComeAlong.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -72,6 +80,9 @@
     <Compile Include="VanaranaTheme.cs" />
     <Compile Include="WellermanShanty.cs" />
     <Compile Include="YourName.cs" />
+    <EmbeddedResource Include="AdvancedAppForm.resx">
+      <DependentUpon>AdvancedAppForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
