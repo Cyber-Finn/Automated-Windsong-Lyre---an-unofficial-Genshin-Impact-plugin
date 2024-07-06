@@ -41,20 +41,22 @@
             this.btnNextSong = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.numberUpDown_SongSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboboxActiveProcesses = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numberUpDown_SongSpeed)).BeginInit();
             this.SuspendLayout();
             // 
             // progressbarSongStatus
             // 
             this.progressbarSongStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.progressbarSongStatus.Location = new System.Drawing.Point(136, 167);
+            this.progressbarSongStatus.Location = new System.Drawing.Point(133, 200);
             this.progressbarSongStatus.Name = "progressbarSongStatus";
             this.progressbarSongStatus.Size = new System.Drawing.Size(366, 42);
             this.progressbarSongStatus.TabIndex = 0;
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(528, 167);
+            this.btnPlay.Location = new System.Drawing.Point(525, 200);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(82, 42);
             this.btnPlay.TabIndex = 1;
@@ -64,7 +66,7 @@
             // 
             // btnPause
             // 
-            this.btnPause.Location = new System.Drawing.Point(616, 167);
+            this.btnPause.Location = new System.Drawing.Point(613, 200);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(82, 42);
             this.btnPause.TabIndex = 2;
@@ -75,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 126);
+            this.label1.Location = new System.Drawing.Point(9, 159);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 3;
@@ -84,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 178);
+            this.label2.Location = new System.Drawing.Point(9, 211);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 4;
@@ -92,7 +94,7 @@
             // 
             // txtboxCurrentSongName
             // 
-            this.txtboxCurrentSongName.Location = new System.Drawing.Point(136, 123);
+            this.txtboxCurrentSongName.Location = new System.Drawing.Point(133, 156);
             this.txtboxCurrentSongName.Name = "txtboxCurrentSongName";
             this.txtboxCurrentSongName.ReadOnly = true;
             this.txtboxCurrentSongName.Size = new System.Drawing.Size(366, 26);
@@ -100,7 +102,7 @@
             // 
             // txtboxHuntingFolder
             // 
-            this.txtboxHuntingFolder.Location = new System.Drawing.Point(136, 24);
+            this.txtboxHuntingFolder.Location = new System.Drawing.Point(133, 57);
             this.txtboxHuntingFolder.Name = "txtboxHuntingFolder";
             this.txtboxHuntingFolder.ReadOnly = true;
             this.txtboxHuntingFolder.Size = new System.Drawing.Size(366, 26);
@@ -109,7 +111,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 24);
+            this.label3.Location = new System.Drawing.Point(9, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 20);
             this.label3.TabIndex = 7;
@@ -117,7 +119,7 @@
             // 
             // btnOpenFolder
             // 
-            this.btnOpenFolder.Location = new System.Drawing.Point(528, 18);
+            this.btnOpenFolder.Location = new System.Drawing.Point(525, 51);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Size = new System.Drawing.Size(170, 39);
             this.btnOpenFolder.TabIndex = 8;
@@ -127,7 +129,7 @@
             // 
             // btnPreviousSong
             // 
-            this.btnPreviousSong.Location = new System.Drawing.Point(528, 115);
+            this.btnPreviousSong.Location = new System.Drawing.Point(525, 148);
             this.btnPreviousSong.Name = "btnPreviousSong";
             this.btnPreviousSong.Size = new System.Drawing.Size(82, 42);
             this.btnPreviousSong.TabIndex = 9;
@@ -137,7 +139,7 @@
             // 
             // btnNextSong
             // 
-            this.btnNextSong.Location = new System.Drawing.Point(616, 115);
+            this.btnNextSong.Location = new System.Drawing.Point(613, 148);
             this.btnNextSong.Name = "btnNextSong";
             this.btnNextSong.Size = new System.Drawing.Size(82, 42);
             this.btnNextSong.TabIndex = 10;
@@ -148,7 +150,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(529, 76);
+            this.label4.Location = new System.Drawing.Point(526, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 11;
@@ -156,7 +158,7 @@
             // 
             // numberUpDown_SongSpeed
             // 
-            this.numberUpDown_SongSpeed.Location = new System.Drawing.Point(595, 74);
+            this.numberUpDown_SongSpeed.Location = new System.Drawing.Point(592, 107);
             this.numberUpDown_SongSpeed.Maximum = new decimal(new int[] {
             5,
             0,
@@ -177,13 +179,32 @@
             0});
             this.numberUpDown_SongSpeed.ValueChanged += new System.EventHandler(this.numberUpDown_SongSpeed_ValueChanged);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 20);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Select App:";
+            // 
+            // comboboxActiveProcesses
+            // 
+            this.comboboxActiveProcesses.FormattingEnabled = true;
+            this.comboboxActiveProcesses.Location = new System.Drawing.Point(133, 9);
+            this.comboboxActiveProcesses.Name = "comboboxActiveProcesses";
+            this.comboboxActiveProcesses.Size = new System.Drawing.Size(366, 28);
+            this.comboboxActiveProcesses.TabIndex = 16;
+            // 
             // AdvancedAppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(735, 233);
+            this.ClientSize = new System.Drawing.Size(735, 278);
+            this.Controls.Add(this.comboboxActiveProcesses);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.numberUpDown_SongSpeed);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnNextSong);
@@ -222,5 +243,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numberUpDown_SongSpeed;
         public System.Windows.Forms.ProgressBar progressbarSongStatus;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboboxActiveProcesses;
     }
 }
