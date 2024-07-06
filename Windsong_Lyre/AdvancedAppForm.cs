@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,19 +20,72 @@ namespace Windsong_Lyre
         private List<string> _songsInDirectory = new List<string>();
         private bool _stillOpen = true;
         private int _currentSong = 0;
+        public string nameOfAppToSendKeysTo = string.Empty;
 
         // Create a BackgroundWorker instance for the music player (multithreading, basically)
         public BackgroundWorker backgroundWorker1 = new BackgroundWorker();
 
         private AdvancedPlaySong advancedPlaySong = new AdvancedPlaySong();
+        public Process targetGameProcess = null;
+        public List<Process> activeProcessList = new List<Process>();
+        public IntPtr targetWindowHandle = IntPtr.Zero;
 
         public AdvancedAppForm()
         {
             InitializeComponent();
+
             //pass this object down the line (We'll use this for accessing and updating our controls)
             advancedPlaySong.advancedOpenTargetFile.callingClass = this;
             SetUpHandlers_BackgroundWorker();
+            //set button visibility
             HandleButtons_Enabled(false);
+            //get the names of all currently open windows and display them to the user for selection
+            handleAccessCurrentOpenWindows();
+        }
+
+        private void handleAccessCurrentOpenWindows()
+        {
+            getAllCurrentOpenWindows();
+            listAllProcessNames();
+        }
+        private void getAllCurrentOpenWindows()
+        {
+            Process[] processList = Process.GetProcesses();
+            foreach (Process process in processList)
+            {
+                if (!String.IsNullOrEmpty(process.MainWindowTitle))
+                {
+                    //Console.WriteLine($"Process: {process.ProcessName} (ID: {process.Id}) - Window title: {process.MainWindowTitle}");
+                    activeProcessList.Add(process);
+                }
+            }
+        }
+        private void listAllProcessNames()
+        {
+            if (activeProcessList == null)
+                return;
+
+            foreach(Process process in activeProcessList)
+            {
+                comboboxActiveProcesses.Items.Add(process.MainWindowTitle);
+            }
+        }
+        private bool loadUpSelectedProcess()
+        {
+            nameOfAppToSendKeysTo = comboboxActiveProcesses.SelectedItem.ToString();
+            targetGameProcess = getSelectedProcess();
+            return (targetGameProcess!=null) ? true : false; //if it's not null, return true. Else return false (We cant execute further)
+        }
+        private Process getSelectedProcess()
+        {
+            foreach(Process process in activeProcessList)
+            {
+                if(process.MainWindowTitle.Equals(nameOfAppToSendKeysTo))
+                {
+                    return process;
+                }
+            }
+            return null;
         }
         private void HandleButtons_Enabled(bool isEnabled)
         {
@@ -169,14 +224,22 @@ namespace Windsong_Lyre
         {
             while (_stillOpen)
             {
-                //pass this object down the line (We'll use this for accessing and updating our controls)
-                advancedPlaySong.advancedOpenTargetFile.callingClass = this;
-                //play the currently selected song
-                advancedPlaySong.Play();
-                handleWhenSongHasFinishedButNoPauseYet();
+                try
+                {
+                    // Set the focus to the desired window
+                    //IntPtr targetWindowHandle = FindWindow(null, nameOfAppToSendKeysTo);
+                    //SetForegroundWindow(targetWindowHandle);
 
-                //update the progress bar
-                //backgroundWorker1.ReportProgress(advancedPlaySong.advancedOpenTargetFile.GetPercentageOfSongPlayed());
+                    //pass this object down the line (We'll use this for accessing and updating our controls later on)
+                    advancedPlaySong.advancedOpenTargetFile.callingClass = this;
+                    //play the currently selected song
+                    advancedPlaySong.Play();
+                    handleWhenSongHasFinishedButNoPauseYet();
+                }
+                catch
+                {
+                    HandleBackgroundWorker_Close();
+                }
 
                 // Check for cancellation
                 if (backgroundWorker1.CancellationPending)
@@ -231,6 +294,7 @@ namespace Windsong_Lyre
                 _currentSong = _songsInDirectory.Count - 1;
             }
             updateTextBox_CurrentSong();
+            resetProgressBarToEmpty();
             AdvancePlaySongUpdateFileName(_songsInDirectory[_currentSong]);
         }
 
@@ -252,22 +316,49 @@ namespace Windsong_Lyre
                 _currentSong = 0;
             }
             updateTextBox_CurrentSong();
+            resetProgressBarToEmpty();
             AdvancePlaySongUpdateFileName(_songsInDirectory[_currentSong]);
         }
+
+        private void resetProgressBarToEmpty()
+        {
+
+            //thread safety
+            if (InvokeRequired)
+            {
+                // Invoke the UI update on the main thread
+                Invoke(new Action(() => backgroundWorker1.ReportProgress(0)));
+            }
+            else
+            {
+                // Directly update the UI (if already on the main thread)
+                progressbarSongStatus.Value = 0;
+            }
+        }
+
+
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
             _stillOpen = true;
+            if (!loadUpSelectedProcess())
+                return;
+
             // Start the background worker, only if it's not already running
-            if(!backgroundWorker1.IsBusy)
+            if (!backgroundWorker1.IsBusy)
             {
                 backgroundWorker1.RunWorkerAsync();
                 handleBtnPlayVisibility(false);
+                handleProcessListVisibility(false);
             }
         }
-        private void handleBtnPlayVisibility(bool visible)
+        private void handleBtnPlayVisibility(bool isEnabled)
         {
-            btnPlay.Enabled = visible;
+            btnPlay.Enabled = isEnabled;
+        }
+        private void handleProcessListVisibility(bool isEnabled)
+        {
+            comboboxActiveProcesses.Enabled = isEnabled;
         }
 
         private void btnPause_Click(object sender, EventArgs e)
@@ -293,6 +384,3 @@ namespace Windsong_Lyre
         }
     }
 }
-
-
-
