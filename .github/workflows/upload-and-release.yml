@@ -1,0 +1,66 @@
+name: Create Release
+on:
+  pull_request:
+    branches:
+      - release
+    types:
+      - closed
+  push:
+    branches:
+      - release
+
+jobs:
+  release:
+    runs-on: windows-latest
+    permissions:
+          contents: write
+          actions: write
+          attestations: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # This is how we give the release some meaningful info - based off the last commit message and description
+      - name: Get last commit message
+        id: get_commit_message
+        #run: echo "::set-output name=commit_message::$(git log -1 --pretty=format:'%s%n%n%b')"
+        run: echo "commit_message=$(git log -1 --pretty=format:'%s%n%n%b')" >> $GITHUB_ENV
+
+      #- name: Get latest tag
+       # id: get_latest_tag
+        #run: echo "::set-output name=tag::$(git describe --abbrev=0 --tags)"
+
+      #- name: Increment tag
+       # id: increment_tag
+        #run: echo "::set-output name=tag::$(python increment_tag.py ${{ steps.get_latest_tag.outputs.tag }})"
+
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          draft: false
+          prerelease: false
+          release_name: Automated Windsong Lyre Download
+          tag_name: v1.0.0 #todo: automate this incrementation later on  
+          body: ${{ env.commit_message }}
+          #body: ${{ github.event.pull_request.title }}  # Use the pull request title only as the release info
+          #body: ${{ steps.get_commit_message.outputs.commit_message }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: automated-windsong-lyre
+          path: ./downloaded-artifact/
+
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./downloaded-artifact/*
+          asset_name: automated-windsong-lyre.zip
+          asset_content_type: application/zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
