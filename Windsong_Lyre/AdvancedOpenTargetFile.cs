@@ -18,23 +18,18 @@ namespace Windsong_Lyre
         public int _CurrentSongNumberOfLines = 0;
 
         public int _SongSpeedOffset = 1;
-
-        public bool _SongHasFinished = false; //might not use this
+        public bool _SongHasFinished = false;
         public AdvancedAppForm callingClass = null;
-
         /// <summary>
         /// This helps us prevent a scenario where the app has requested closure, but the thread is stuck in the for-loop until the song is finished
         /// </summary>
         public bool _SongHasBeenPaused = false;
         /// <summary>
-        /// Holds all the contents of the current song file, works in conjunction with the _CurrentSongStartIndex
+        /// Holds all the contents of the current song file, works in conjunction with the _CurrentSongStartIndex and being able to Pause/Play the song
         /// </summary>
         public List<string> _CurrentSongFileContents = new List<string>();
-
         public string _Directory = string.Empty;
         public string _Filename = string.Empty;
-
-
         #region Ensure that only Genshin receives the keypresses
         [DllImport("user32.dll")]
         public static extern int SetForegroundWindow(IntPtr hWnd);
@@ -42,15 +37,11 @@ namespace Windsong_Lyre
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
         #endregion Ensure that only Genshin receives the keypresses
-
-
         public double GetPercentageOfSongPlayed()
         {
             double answer = ((_CurrentSongStartIndex * 100.0) / _CurrentSongNumberOfLines);
             return answer;
         }
-
-
         public void openTargetFile()
         {
             //before we do anything, check that the target window is accessible (i.e, The game is still open)
@@ -67,7 +58,6 @@ namespace Windsong_Lyre
                 }
             }
         }
-
         private List<string> cleanFile_RemoveEmptyLines(string[] filecontents)
         {
             int lengthOfArray = filecontents.Length;
@@ -81,13 +71,11 @@ namespace Windsong_Lyre
             }
             return cleanedFileContents;
         }
-
         private void updateformProgressBar()
         {
             //update the progress bar on the app's main form
             callingClass.backgroundWorker1.ReportProgress(Convert.ToInt32(GetPercentageOfSongPlayed()));
         }
-
         private bool getTargetAppWindow()
         {
             //ensure that only the specified window gets the keypresses
@@ -95,7 +83,6 @@ namespace Windsong_Lyre
             int i = SetForegroundWindow(callingClass.targetGameProcess.MainWindowHandle);
             return (i > 0); //if it's empty and we couldnt get the target window, return false. if it passed, return true
         }
-
         private bool checkTargetWindowIsAccessible()
         {
             if (!getTargetAppWindow())

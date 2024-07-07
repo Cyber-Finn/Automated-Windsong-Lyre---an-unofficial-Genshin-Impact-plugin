@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -29,6 +30,9 @@ namespace Windsong_Lyre
         public Process targetGameProcess = null;
         public List<Process> activeProcessList = new List<Process>();
         public IntPtr targetWindowHandle = IntPtr.Zero;
+        
+        //we'll be using this to ensure the backgroundworker process is closed
+        private ManualResetEvent _resetEvent = new ManualResetEvent(false);
 
         public AdvancedAppForm()
         {
@@ -42,7 +46,6 @@ namespace Windsong_Lyre
             //get the names of all currently open windows and display them to the user for selection
             handleAccessCurrentOpenWindows();
         }
-
         private void handleAccessCurrentOpenWindows()
         {
             getAllCurrentOpenWindows();
@@ -109,13 +112,10 @@ namespace Windsong_Lyre
             //allows us to update the progressbar in the background thread
             backgroundWorker1.ProgressChanged += backgroundWorker1_ProgressChanged;
         }
-
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             progressbarSongStatus.Value = e.ProgressPercentage;
         }
-
-
         private void btnOpenFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog fbDialog = new FolderBrowserDialog();
@@ -136,7 +136,6 @@ namespace Windsong_Lyre
                 updateSongoffsetSpeed();
             }
         }
-
         /// <summary>
         /// Tells the app which song file to actually start playing
         /// </summary>
@@ -158,13 +157,11 @@ namespace Windsong_Lyre
             int _songSpeedOffset = Convert.ToInt32(numberUpDown_SongSpeed.Value);
             advancedPlaySong.advancedOpenTargetFile._SongSpeedOffset = _songSpeedOffset;
         }
-
         private void Clear_SongsInDirectory()
         {
             _songsInDirectory.Clear();
             _songsInDirectory.TrimExcess();
         }
-
         private void Handle_SongsInDirectory()
         {
             Clear_SongsInDirectory();
@@ -214,7 +211,6 @@ namespace Windsong_Lyre
         {
             backgroundWorker1.CancelAsync();
         }
-
         /// <summary>
         /// happens when the folder has been selected and we need to start sending keypresses, until a song is changed or stopped
         /// </summary>
@@ -226,17 +222,13 @@ namespace Windsong_Lyre
             {
                 try
                 {
-                    // Set the focus to the desired window
-                    //IntPtr targetWindowHandle = FindWindow(null, nameOfAppToSendKeysTo);
-                    //SetForegroundWindow(targetWindowHandle);
-
-                    //pass this object down the line (We'll use this for accessing and updating our controls later on)
+                    //pass the current class object down the line (We'll use this for accessing and updating our controls later on)
                     advancedPlaySong.advancedOpenTargetFile.callingClass = this;
                     //play the currently selected song
                     advancedPlaySong.Play();
                     handleWhenSongHasFinishedButNoPauseYet();
                 }
-                catch
+                catch //if there are any problems, we need to request that the thread close
                 {
                     HandleBackgroundWorker_Close();
                 }
@@ -248,8 +240,17 @@ namespace Windsong_Lyre
                     break;
                 }
             }
-        }
 
+            //just an extra edge-case to ensure that we're closing the background thread (if something happens, or user closes) no matter what
+            if (backgroundWorker1.CancellationPending)
+            {
+                e.Cancel = true; // Indicate cancellation of the worker thread
+            }
+            else
+            {
+                HandleBackgroundWorker_Close();
+            }
+        }
         private void handleWhenSongHasFinishedButNoPauseYet()
         {
             if(advancedPlaySong.advancedOpenTargetFile._SongHasFinished)
@@ -267,7 +268,6 @@ namespace Windsong_Lyre
                 }
             }
         }
-
         /// <summary>
         /// happens when the event finishes, or the user hits cancel
         /// </summary>
@@ -275,6 +275,10 @@ namespace Windsong_Lyre
         /// <param name="e"></param>
         private void HandleBackgroundWorker_WhenWorkCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            //dont want to do anything here until the user closes the app,
+            //we want to be able to play the next song once the current one is done.
+            //closing this worker will prevent that, so we'll be resetting it
+            _resetEvent.Set(); //signal completion
         }
 
         private void btnPreviousSong_Click(object sender, EventArgs e)
@@ -297,7 +301,6 @@ namespace Windsong_Lyre
             resetProgressBarToEmpty();
             AdvancePlaySongUpdateFileName(_songsInDirectory[_currentSong]);
         }
-
         private void btnNextSong_Click(object sender, EventArgs e)
         {
             HandleNextSong();
@@ -319,7 +322,6 @@ namespace Windsong_Lyre
             resetProgressBarToEmpty();
             AdvancePlaySongUpdateFileName(_songsInDirectory[_currentSong]);
         }
-
         private void resetProgressBarToEmpty()
         {
 
@@ -335,23 +337,36 @@ namespace Windsong_Lyre
                 progressbarSongStatus.Value = 0;
             }
         }
-
-
-
         private void btnPlay_Click(object sender, EventArgs e)
         {
             _stillOpen = true;
             if (!loadUpSelectedProcess())
                 return;
 
-            // Start the background worker, only if it's not already running
-            if (!backgroundWorker1.IsBusy)
-            {
-                backgroundWorker1.RunWorkerAsync();
-                handleBtnPlayVisibility(false);
-                handleProcessListVisibility(false);
-            }
+            //start or restart the worker to execute our logic (basically calls HandleBackgroundWorker_DoWork)
+            StartOrReuseWorker();
+            handlePlayButtonClickVisibilitySettings(false);
+
         }
+        private void StartOrReuseWorker()
+        {
+            if (backgroundWorker1.IsBusy)
+            {
+                //cancel previous work
+                HandleBackgroundWorker_Close();
+                //wait for completion
+                _resetEvent.WaitOne();
+            }
+            //start the new work
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void handlePlayButtonClickVisibilitySettings(bool isVisible)
+        {
+            handleBtnPlayVisibility(isVisible);
+            handleProcessListVisibility(isVisible);
+        }
+
         private void handleBtnPlayVisibility(bool isEnabled)
         {
             btnPlay.Enabled = isEnabled;
@@ -360,7 +375,6 @@ namespace Windsong_Lyre
         {
             comboboxActiveProcesses.Enabled = isEnabled;
         }
-
         private void btnPause_Click(object sender, EventArgs e)
         {
             HandleBackgroundWorker_Close();
@@ -368,16 +382,27 @@ namespace Windsong_Lyre
             advancedPlaySong.advancedOpenTargetFile._SongHasBeenPaused = true;
             handleBtnPlayVisibility(true);
         }
-
         private void formClosingEvent(object sender, FormClosingEventArgs e)
         {
-            HandleBackgroundWorker_Close();
-            backgroundWorker1.Dispose();
             _stillOpen = false;
+
+            //if the worker is still busy, close it gracefully
+            if (backgroundWorker1.IsBusy)
+            {
+                //call for the worker to finish
+                HandleBackgroundWorker_Close();
+
+                //todo: display a message to the user asking them to wait for the app to finish up closing
+
+                //while the worker is finishing off its work, let it process all the work it needs to and then close
+                while (backgroundWorker1.IsBusy)
+                {
+                    Application.DoEvents();
+                }
+            }
             //terminate the current process (Further means of freeing up the resources, in case the others didnt work)
             Environment.Exit(0);
         }
-
         private void numberUpDown_SongSpeed_ValueChanged(object sender, EventArgs e)
         {
             updateSongoffsetSpeed();
