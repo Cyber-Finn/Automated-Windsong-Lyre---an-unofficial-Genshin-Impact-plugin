@@ -17,6 +17,10 @@ namespace Windsong_Lyre
 {
     public partial class AdvancedAppForm : Form
     {
+        //using this not only for where to start once a song is paused and played again, but also for updating the progress bar on the main form
+        public int _CurrentSongStartIndex = 0;
+
+
         private string _folderName = string.Empty;
         private List<string> _songsInDirectory = new List<string>();
         private bool _stillOpen = true;
@@ -123,14 +127,14 @@ namespace Windsong_Lyre
             {
                 _folderName = fbDialog.SelectedPath;
                 txtboxHuntingFolder.Text = _folderName;
-                AdvancePlaySongUpdateFolderName(_folderName);
+                AdvancedPlaySong_UpdateFolderName(_folderName);
 
                 Handle_SongsInDirectory();
 
                 //load up the first song by default
                 updateTextBox_CurrentSong(_songsInDirectory[_currentSong]);
 
-                AdvancePlaySongUpdateFileName(_songsInDirectory[_currentSong]);
+                AdvancedPlaySong_UpdateFileName(_songsInDirectory[_currentSong]);
 
                 HandleButtons_Enabled(true);
                 updateSongoffsetSpeed();
@@ -140,7 +144,7 @@ namespace Windsong_Lyre
         /// Tells the app which song file to actually start playing
         /// </summary>
         /// <param name="songName"></param>
-        private void AdvancePlaySongUpdateFileName(string songName)
+        private void AdvancedPlaySong_UpdateFileName(string songName)
         {
             advancedPlaySong.advancedOpenTargetFile._Filename = songName;
         }
@@ -148,7 +152,7 @@ namespace Windsong_Lyre
         /// Tells the app which Folder it needs to browse
         /// </summary>
         /// <param name="folderName"></param>
-        private void AdvancePlaySongUpdateFolderName(string folderName)
+        private void AdvancedPlaySong_UpdateFolderName(string folderName)
         {
             advancedPlaySong.advancedOpenTargetFile._Directory = folderName;
         }
@@ -165,7 +169,7 @@ namespace Windsong_Lyre
         private void Handle_SongsInDirectory()
         {
             Clear_SongsInDirectory();
-            _songsInDirectory = CleanFileName(Directory.GetFiles(_folderName).ToList());
+            _songsInDirectory = CleanFileName(Directory.GetFiles(_folderName,"*.txt").ToList());
         }
         /// <summary>
         /// Updates the textbox with a specific message
@@ -299,7 +303,7 @@ namespace Windsong_Lyre
             }
             updateTextBox_CurrentSong();
             resetProgressBarToEmpty();
-            AdvancePlaySongUpdateFileName(_songsInDirectory[_currentSong]);
+            AdvancedPlaySong_UpdateFileName(_songsInDirectory[_currentSong]);
         }
         private void btnNextSong_Click(object sender, EventArgs e)
         {
@@ -320,7 +324,7 @@ namespace Windsong_Lyre
             }
             updateTextBox_CurrentSong();
             resetProgressBarToEmpty();
-            AdvancePlaySongUpdateFileName(_songsInDirectory[_currentSong]);
+            AdvancedPlaySong_UpdateFileName(_songsInDirectory[_currentSong]);
         }
         private void resetProgressBarToEmpty()
         {
@@ -340,13 +344,14 @@ namespace Windsong_Lyre
         private void btnPlay_Click(object sender, EventArgs e)
         {
             _stillOpen = true;
+            handleSongHasBeenPaused(false);
+
             if (!loadUpSelectedProcess())
                 return;
 
             //start or restart the worker to execute our logic (basically calls HandleBackgroundWorker_DoWork)
             StartOrReuseWorker();
             handlePlayButtonClickVisibilitySettings(false);
-
         }
         private void StartOrReuseWorker()
         {
@@ -357,8 +362,11 @@ namespace Windsong_Lyre
                 //wait for completion
                 _resetEvent.WaitOne();
             }
-            //start the new work
-            backgroundWorker1.RunWorkerAsync();
+            if(!backgroundWorker1.IsBusy) //could've done an ELSE to catch any other status, but want to really clamp this down to only execute if the state is NOT BUSY
+            {
+                //start the new work
+                backgroundWorker1.RunWorkerAsync();
+            }
         }
 
         private void handlePlayButtonClickVisibilitySettings(bool isVisible)
@@ -375,11 +383,16 @@ namespace Windsong_Lyre
         {
             comboboxActiveProcesses.Enabled = isEnabled;
         }
+        private void handleSongHasBeenPaused(bool isPaused)
+        {
+            advancedPlaySong.advancedOpenTargetFile._SongHasBeenPaused = isPaused;
+        }
+
         private void btnPause_Click(object sender, EventArgs e)
         {
             HandleBackgroundWorker_Close();
             _stillOpen = false;
-            advancedPlaySong.advancedOpenTargetFile._SongHasBeenPaused = true;
+            handleSongHasBeenPaused(true);
             handleBtnPlayVisibility(true);
         }
         private void formClosingEvent(object sender, FormClosingEventArgs e)

@@ -13,8 +13,7 @@ namespace Windsong_Lyre
 {
     internal class AdvancedOpenTargetFile
     {
-        //using these 2 not only for where to start once paused, but for updating the progress bar on the main form
-        public int _CurrentSongStartIndex = 0;
+        //using this for updating the progress bar on the main form
         public int _CurrentSongNumberOfLines = 0;
 
         public int _SongSpeedOffset = 1;
@@ -30,16 +29,16 @@ namespace Windsong_Lyre
         public List<string> _CurrentSongFileContents = new List<string>();
         public string _Directory = string.Empty;
         public string _Filename = string.Empty;
-        #region Ensure that only Genshin receives the keypresses
+        #region Ensure that only our chosen app receives the keypresses
         [DllImport("user32.dll")]
         public static extern int SetForegroundWindow(IntPtr hWnd);
         [DllImport("user32.dll", SetLastError = true)]
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
-        #endregion Ensure that only Genshin receives the keypresses
+        #endregion Ensure that only our chosen app receives the keypresses
         public double GetPercentageOfSongPlayed()
         {
-            double answer = ((_CurrentSongStartIndex * 100.0) / _CurrentSongNumberOfLines);
+            double answer = ((callingClass._CurrentSongStartIndex * 100.0) / _CurrentSongNumberOfLines);
             return answer;
         }
         public void openTargetFile()
@@ -99,13 +98,13 @@ namespace Windsong_Lyre
 
             _CurrentSongNumberOfLines = _CurrentSongFileContents.Count;
 
-            for (int i = _CurrentSongStartIndex; i < _CurrentSongFileContents.Count; i++)
+            for (int i = callingClass._CurrentSongStartIndex; i < _CurrentSongFileContents.Count; i++)
             {
                 if(!_SongHasBeenPaused)
                 {
                     if ((_CurrentSongFileContents[i] != "") && (_CurrentSongFileContents[i] != " ") && (_CurrentSongFileContents[i] != null))
                     {
-                        _CurrentSongStartIndex = i;
+                        callingClass._CurrentSongStartIndex = i;
 
                         if (!checkTargetWindowIsAccessible())
                             return;
