@@ -202,7 +202,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(735, 278);
+            this.ClientSize = new System.Drawing.Size(717, 267);
             this.Controls.Add(this.comboboxActiveProcesses);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.numberUpDown_SongSpeed);
@@ -221,7 +221,7 @@
             this.MaximizeBox = false;
             this.Name = "AdvancedAppForm";
             this.ShowIcon = false;
-            this.Text = "Advanced Windsong Controls";
+            this.Text = "Windsong Lyre";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formClosingEvent);
             ((System.ComponentModel.ISupportInitialize)(this.numberUpDown_SongSpeed)).EndInit();
             this.ResumeLayout(false);
