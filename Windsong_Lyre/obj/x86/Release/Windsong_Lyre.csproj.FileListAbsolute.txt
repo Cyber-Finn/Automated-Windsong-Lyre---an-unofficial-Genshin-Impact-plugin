@@ -39,7 +39,6 @@ C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\bin\Release\Windsong_
 C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\bin\Release\Windsong_Lyre.exe
 C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\bin\Release\Windsong_Lyre.pdb
 C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\obj\x86\Release\Windsong_Lyre.csproj.AssemblyReference.cache
-C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\obj\x86\Release\Windsong_Lyre.Form1.resources
 C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\obj\x86\Release\Windsong_Lyre.Properties.Resources.resources
 C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\obj\x86\Release\Windsong_Lyre.csproj.GenerateResource.cache
 C:\Users\Steph\source\repos\C#\Windsong Lyre\Windsong_Lyre\obj\x86\Release\Windsong_Lyre.csproj.CoreCompileInputs.cache

@@ -13,7 +13,7 @@ namespace Windsong_Lyre
 
         public void Play()
         {
-            Thread.Sleep(5000);
+            Thread.Sleep(5000); //gives the user 5 seconds before the next song plays
             advancedOpenTargetFile.openTargetFile();
         }    
     }
