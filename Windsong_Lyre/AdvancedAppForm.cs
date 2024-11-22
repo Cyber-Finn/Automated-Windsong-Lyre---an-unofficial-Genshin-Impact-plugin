@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Windsong_Lyre
 {
@@ -52,8 +46,25 @@ namespace Windsong_Lyre
         }
         private void handleAccessCurrentOpenWindows()
         {
-            getAllCurrentOpenWindows();
-            listAllProcessNames();
+            clearAllProcessNames();
+            if(this.comboboxActiveProcesses.Items.Count==0)
+            {
+                getAllCurrentOpenWindows();
+                listAllProcessNames();
+            }
+            else
+            {
+                MessageBox.Show("error updating view of processes");
+            }
+        }
+
+        private void clearAllProcessNames()
+        {
+            this.comboboxActiveProcesses.Items.Clear();
+            this.comboboxActiveProcesses.SelectedIndex = -1;
+            this.comboboxActiveProcesses.SelectedItem = null;
+            this.activeProcessList.Clear();
+            this.activeProcessList.TrimExcess();
         }
         private void getAllCurrentOpenWindows()
         {
@@ -419,6 +430,11 @@ namespace Windsong_Lyre
         private void numberUpDown_SongSpeed_ValueChanged(object sender, EventArgs e)
         {
             updateSongoffsetSpeed();
+        }
+
+        private void btnRefreshActiveProcesses_Click(object sender, EventArgs e)
+        {
+            handleAccessCurrentOpenWindows();
         }
     }
 }
