@@ -18,7 +18,7 @@ jobs:
           attestations: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # This is how we give the release some meaningful info - based off the last commit message and description
       - name: Get last commit message
